@@ -27,6 +27,7 @@ void PostOrderWithRecursion(BiTree T);
 void PostOrderWithoutRecursion(BiTree T);
 void LevelOrder(BiTree T);
 int BitreeHeight(BiTree T);
+BiTree CreatBiTree_by_Pre_and_In_Order(ElemType Pre_arr[],ElemType In_arr[],int low1,int high1,int low2,int high2);//通过前、中序遍历建立树，需保证输入合法
 
 
 
@@ -171,6 +172,29 @@ int BitreeHeight(BiTree T)//利用层序遍历思想计算树高
         }
     }
     return height;
+}
+
+BiTree CreatBiTree_by_Pre_and_In_Order(ElemType Pre_arr[],ElemType In_arr[],int low1,int high1,int low2,int high2)//通过前、中序遍历建立树，需保证输入合法
+{
+    int i = 0;
+    BiTNode *root;
+    root = new BiTNode;
+    root -> data = Pre_arr[low1];
+    for (i = low2; In_arr[i]!=root->data; i++);//根节点在中序数列里的划分
+    int left_length = i-low2;//左子树长度
+    int right_length = high2-i;//右子树长度
+    
+    if  (left_length != 0)//递归建立左子树
+        root->leftchild = CreatBiTree_by_Pre_and_In_Order(Pre_arr, In_arr, low1+1, low1+left_length, low2, low2+left_length-1);
+    else
+        root->leftchild = NULL;
+    
+    if  (right_length != 0)
+        root->rightchild = CreatBiTree_by_Pre_and_In_Order(Pre_arr, In_arr, high1-right_length+1, high1, high2-right_length+1, high2);
+    else
+        root->rightchild = NULL;
+    
+    return root;
 }
 
 

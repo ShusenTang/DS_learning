@@ -26,6 +26,7 @@ void InOrderWithRecursion(BiTree T);
 void PostOrderWithRecursion(BiTree T);
 void PostOrderWithoutRecursion(BiTree T);
 void LevelOrder(BiTree T);
+int BitreeHeight(BiTree T);
 
 
 
@@ -131,6 +132,7 @@ void PostOrderWithoutRecursion(BiTree T)
 
 void LevelOrder(BiTree T)
 {
+    if(T==NULL) return;                   //空树
     BiTNode *queue[MAXSIZE];
     int front=0,rear=0;
     BiTNode *p=T;
@@ -138,13 +140,37 @@ void LevelOrder(BiTree T)
     while (rear!=front) {                   //队非空
         p = queue[front++];                 //出队
         visit(p);
-        if (p->leftchild) {                 //将左孩子入队
+        if (p->leftchild)                   //将左孩子入队
             queue[rear++] = p -> leftchild;
-        }
-        if (p->rightchild) {                //将右孩子入队
+        if (p->rightchild)                  //将右孩子入队
             queue[rear++] = p -> rightchild;
+      
+    }
+}
+
+int BitreeHeight(BiTree T)//利用层序遍历思想计算树高
+{
+    int height = 0;
+    if(T==NULL) return 0;                   //空树
+    BiTNode *queue[MAXSIZE];
+    int front=0,rear=0;
+    BiTNode *p=T;
+    queue[rear++] = p;                      //根入队
+    int last = rear - 1;                    //last记录每层最后一个结点
+    while (rear!=front) {                   //队非空
+        p = queue[front++];                 //出队
+        //visit(p);
+        if (p->leftchild)                   //将左孩子入队
+            queue[rear++] = p -> leftchild;
+        if (p->rightchild)                  //将右孩子入队
+            queue[rear++] = p -> rightchild;
+        
+        if (front == last + 1){             //若刚刚出队的是一层中最后一个结点
+            height++;
+            last = rear-1;                  //last更新到下一层
         }
     }
+    return height;
 }
 
 

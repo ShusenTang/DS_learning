@@ -34,6 +34,7 @@ int main(int argc, const char * argv[]) {
 //    PostOrderWithoutRecursion(mytree);
 //    cout << endl;
     LevelOrder(mytree);
+    cout << BitreeHeight(mytree);
     
     return 0;
 }

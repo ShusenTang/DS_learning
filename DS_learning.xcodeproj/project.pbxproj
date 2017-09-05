@@ -24,6 +24,7 @@
 
 /* Begin PBXFileReference section */
 		24430CD41F55914A00859015 /* BiTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BiTree.h; sourceTree = "<group>"; };
+		2462A2F71F5EDFE2003BE8E1 /* Tree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tree.h; sourceTree = "<group>"; };
 		2467406F1F4C683100F73C1A /* DS_learning */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DS_learning; sourceTree = BUILT_PRODUCTS_DIR; };
 		246740721F4C683100F73C1A /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		246740791F4C689100F73C1A /* others.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = others.h; sourceTree = "<group>"; };
@@ -63,6 +64,7 @@
 			children = (
 				246740721F4C683100F73C1A /* main.cpp */,
 				246740791F4C689100F73C1A /* others.h */,
+				2462A2F71F5EDFE2003BE8E1 /* Tree.h */,
 				2467407A1F4C84A100F73C1A /* Arrlist.h */,
 				24D4BE7E1F505B4800D49B3C /* Linklist.h */,
 				24430CD41F55914A00859015 /* BiTree.h */,

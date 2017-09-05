@@ -28,7 +28,7 @@ void PostOrderWithoutRecursion(BiTree T);
 void LevelOrder(BiTree T);
 int BitreeHeight(BiTree T);
 BiTree CreatBiTree_by_Pre_and_In_Order(ElemType Pre_arr[],ElemType In_arr[],int low1,int high1,int low2,int high2);//通过前、中序遍历建立树，需保证输入合法
-void PreOrder_print_all_data_and_level(BiTree T,int initiallevel);//利用先序遍历输出所有节点数据及层次
+void PreOrder_print_all_data_and_level(BiTree T,int initiallevel);//按照先序遍历顺序输出所有节点数据及层次
 
 
 
@@ -201,7 +201,7 @@ BiTree CreatBiTree_by_Pre_and_In_Order(ElemType Pre_arr[],ElemType In_arr[],int 
 void PreOrder_print_all_data_and_level(BiTree T,int initiallevel)
 {
     if(T){
-        cout << "数据" << T->data << "位于第" << initiallevel << "层" <<endl;
+        cout << "Data " << T->data << " is located at " << "Level_"<< initiallevel <<endl;
         if (T -> leftchild)
             PreOrder_print_all_data_and_level(T->leftchild,initiallevel+1);
         if (T -> rightchild)
